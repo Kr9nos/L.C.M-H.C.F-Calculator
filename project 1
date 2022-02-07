@@ -1,0 +1,26 @@
+num=sorted([int(i) for i in input('Enter the numbers (use comma(,) to separate): ').split(',')])
+lcm=1
+for i in num:
+    lcm*=i
+Lcm=None
+h=None
+for i in range(1,lcm+1):
+    count=0
+    for j in num:
+        if i%j==0:
+            count+=1
+            if count==len(num):
+                Lcm=i
+    if count==len(num):
+        break
+for i in range(num[-1],0,-1):
+    count=0
+    for j in num:
+        if j%i==0:
+            count+=1
+            if count==len(num):
+                h=i
+    if count==len(num):
+        break
+print('L.C.M. is', Lcm)
+print('H.C.F. is',h)
